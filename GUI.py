@@ -21,17 +21,7 @@ class GuiLogin:
         self.setup_login_info()
         self.setup_login_button()
         self.frame.pack(expand=True, fill=BOTH)
-
-        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
-
-    def on_closing(self):
-        self.root.destroy()
-        self.setup.get_client().logout() 
-        print("Logged out successfully!")
-
-    def __exit__(self):
-        print("closing the window")
 
     def setup_messenger_logo(self):
         photo = ImageTk.PhotoImage(Image.open("images/messenger_logo.png"))
